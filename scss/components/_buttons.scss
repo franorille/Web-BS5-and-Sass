@@ -1,0 +1,41 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+.btn-rounded {
+  @include media-breakpoint-down(sm) {
+    //mixin que tiene por defecto sass una media query que indica estilos para tamaños de pantalla inferiores al breakpoint indicado (small), también tiene otra para superiores con @include media-breakpoint-up(breakpoint)
+    display: none;
+  }
+  position: relative;
+  padding: 0.9375rem 4.375rem 0.9375rem 1.25rem; //arriba derecha abajo izquierda
+  font-weight: 700;
+  margin: 0;
+  border: 0.1rem solid rgba($white, 0.6);
+  background-color: $white;
+
+  span {
+    position: absolute;
+    background-color: $primary;
+    width: 2.5rem;
+    height: 2.5rem;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    @include flex-centrado; // equivalente a  display: flex; justify-content: center; align-items: center;
+
+    i {
+      color: $white;
+      font-size: 1rem;
+      // line-height: 2.5rem; //separacion entre lineas, lo coloca más abajo prefiero usar mixin display flex centrado
+    }
+  }
+
+  &:hover {
+    @include gradient;
+    color: $white;
+    span {
+      background-color: rgba($black, 0.6);
+    }
+  } /*& hace referencia al selector de la regla actual, en este caso es como el equivalente a .btn-rounded*/
+}

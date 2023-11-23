@@ -1,0 +1,30 @@
+/*@use es para Loads mixins, functions, and variables from other Sass stylesheets as 'modules', and combines CSS from multiple stylesheets together. 
+Es decir, importarmos el archivo parcial que creamos con el underscore primero. No hace falta ponerlo para importarlo ni indicar la extensión
+Al hacer esto, nuestro archivo css tendrá todas las líneas de bootstrap*/
+@use 'custom';
+
+
+/*Importamos componentes que hemos creado */
+
+@use 'components/animations';
+@use 'components/buttons';
+@use 'components/mixins';
+@use 'components/typography';
+
+/*Hemos creado archivos parciales para cada una de las secciones que se usarán en la web y los importamos al archivo scss principal en orden*/
+
+@use 'sections/navbar';
+@use 'sections/intro-section';
+@use 'sections/companies';
+@use 'sections/services';
+@use 'sections/testimonials';
+@use 'sections/faq';
+@use 'sections/portfolio';
+@use 'sections/get-started';
+@use 'sections/footer';
+
+
+
+
+
+

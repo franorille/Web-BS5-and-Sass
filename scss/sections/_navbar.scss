@@ -1,0 +1,23 @@
+// Es necesario indicar que se debe usar las variables contenidas en el fichero custom,
+//  porque si no no las reconoce ni $primary ni secondary
+//  lo que va tras as es el asterisco para eliminar el espacio de nombres y que funcione
+//el asterisco representa que se importará todo el contenido del archivo, variables, funciones, mixins estilos, etc sin necesidad de referenciar cada uno de ellos  por separado
+@use '../custom' as *;
+
+//incluimos modulo mixins
+@use '../components/mixins' as *;
+
+
+.menu{
+  @include gradient;
+    
+  li{
+    padding: 0 0.7rem;
+
+    a{
+      color: $white !important; //!important para que prevalezca este estilo 
+      text-transform: capitalize;
+      font-weight: 600;
+    }
+  }
+}
